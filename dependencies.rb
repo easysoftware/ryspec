@@ -5,11 +5,12 @@ group :rys do
   end
 
   group :test, :development do
+    gem 'puma', '~> 3.11'
     gem 'rspec-rails', '~> 3.7.2', require: false
   end
 
   group :test do
-    gem 'capybara', '~> 2.18.0'
+    gem 'capybara', '~> 3.0.3'
     gem 'database_cleaner', '~> 1.6.2'
     gem 'factory_bot_rails', '~> 4.8.2'
     gem 'faker', '~> 1.8.7'
