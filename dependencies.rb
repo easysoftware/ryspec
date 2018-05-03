@@ -11,11 +11,11 @@ group :rys do
 
   group :test do
     gem 'capybara', '~> 3.0.3'
-    gem 'database_cleaner', '~> 1.6.2'
+    gem 'database_cleaner', '~> 1.7.0'
     gem 'factory_bot_rails', '~> 4.8.2'
     gem 'faker', '~> 1.8.7'
     gem 'launchy', '~> 2.4.3'
-    gem 'poltergeist', '~> 1.17.0'
+    gem 'poltergeist', '~> 1.18.0'
     gem 'webmock', '~> 3.4.1'
   end
 end
