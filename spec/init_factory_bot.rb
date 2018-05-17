@@ -2,6 +2,12 @@
 FactoryBot.definition_file_paths = []
 FactoryBot.reset_configuration
 
+# FIXME: This is a temporary solution
+#        Fix it by prevent loading any factories
+#        in easyproject core if Ryspec is present
+FactoryBot.register_default_strategies
+FactoryBot.register_default_callbacks
+
 Rys::PluginsManagement.all do |plugin|
   FactoryBot.definition_file_paths << plugin.root.join('spec/factories')
 end
