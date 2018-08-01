@@ -1,3 +1,4 @@
+git_source(:github) {|name| "https://github.com/#{name}.git" }
 
 group :rys do
   group :default do
