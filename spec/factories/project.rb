@@ -2,8 +2,8 @@ FactoryBot.define do
 
   factory :project do
     transient do
-      number_of_issues 0
-      trackers []
+      number_of_issues { 0 }
+      trackers { [] }
     end
 
     sequence(:name){ |n| "Project ##{n}" }

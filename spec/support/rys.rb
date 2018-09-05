@@ -27,5 +27,10 @@ module Ryspec::Test
       end
     end
 
+    def when_rys_activated(feature)
+      pending "Feature deactivated" unless Rys::Feature.active?(feature)
+      yield if block_given?
+    end
+
   end
 end
