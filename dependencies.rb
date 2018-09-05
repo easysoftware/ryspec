@@ -6,8 +6,8 @@ group :rys do
   end
 
   group :test, :development do
-    gem 'puma', '~> 3.11'
-    gem 'rspec-rails', '~> 3.7.2', require: false
+    gem 'puma', '~> 3.12'
+    gem 'rspec-rails', '~> 3.8', require: false
   end
 
   group :test do
