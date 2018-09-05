@@ -59,9 +59,9 @@ RSpec.configure do |config|
   config.before(:each, :logged) do |example|
     logged_user case example.metadata[:logged]
                 when :admin
-                  FactoryBot.create(:user, :admin)
+                  User.find_by(admin: true) || FactoryBot.create(:user, :admin)
                 when :user, true
-                  FactoryBot.create(:user)
+                  User.active.first || FactoryBot.create(:user)
                 else
                   User.anonymous
                 end
