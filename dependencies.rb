@@ -8,6 +8,7 @@ group :rys do
   group :test, :development do
     gem 'puma', '~> 3.12'
     gem 'rspec-rails', '~> 3.8', require: false
+    gem 'simplecov', require: false
   end
 
   group :test do
