@@ -38,13 +38,24 @@ FactoryBot.define do
 
   # IssuePriority
   #
-  # factory :issue_priority, :parent => :enumeration, :class => 'IssuePriority' do
-  factory :issue_priority do
-    sequence(:name) { |n| "Priority ##{n}" }
+  factory :issue_priority, aliases: [:priority] do
+    sequence(:name) { |n| "Priority #{%w[Low Normal High Urgent][n % 4]} #{n}" }
+    active { true }
+    sequence(:position)
+
+    is_default { !IssuePriority.any? }
 
     trait :default do
       is_default { true }
     end
+
+    trait :low do
+      name { "Low" }
+    end
+    trait :high do
+      name { "High" }
+    end
+
   end
 
 
