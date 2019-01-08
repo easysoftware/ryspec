@@ -18,6 +18,6 @@ group :rys do
     gem 'faker', '~> 1.8.7'
     gem 'launchy', '~> 2.4.3'
     gem 'poltergeist', '~> 1.18.0'
-    gem 'webmock', '~> 3.4.1'
+    gem 'webmock', '~> 3.5.1'
   end
 end
