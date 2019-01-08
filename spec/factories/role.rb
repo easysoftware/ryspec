@@ -6,7 +6,7 @@ FactoryBot.define do
     users_visibility { "all" }
 
     trait :bultin do
-      builtin true
+      builtin { true }
     end
 
     trait :manager do
