@@ -46,18 +46,15 @@ RSpec.configure do |config|
   config.before(:each) do
     # DatabaseCleaner.strategy = :truncation, { except: RYSPEC_PERSISTANT_TABLES }
     # DatabaseCleaner.strategy = :deletion, { except: RYSPEC_PERSISTANT_TABLES }
-  end
-
-  config.before(:each, transaction_strategy: true) do
-    # DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :transaction
   end
 
   config.before(:each) do
-    # DatabaseCleaner.start
+    DatabaseCleaner.start
   end
 
   config.append_after(:each) do
-    # DatabaseCleaner.clean
+    DatabaseCleaner.clean
   end
 
   config.before(:each, :logged) do |example|
