@@ -1,3 +1,3 @@
 module Ryspec
-  VERSION = '0.0.10'
+  VERSION = '0.2.0'
 end
