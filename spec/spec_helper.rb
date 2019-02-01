@@ -14,6 +14,8 @@ require_relative 'init_factory_bot'
 require_relative 'init_capybara'
 require_relative 'init_support'
 
+require 'database_cleaner'
+
 ActiveJob::Base.queue_adapter = :test
 
 RSpec.configure do |config|

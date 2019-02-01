@@ -1,3 +1,4 @@
+require "factory_bot_rails"
 # To prevent loading factories from old core
 FactoryBot.definition_file_paths = []
 FactoryBot.reset_configuration
