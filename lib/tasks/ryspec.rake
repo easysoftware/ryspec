@@ -1,4 +1,4 @@
-if !Rails.env.production?
+if Rails.env.test?
   require 'rspec/core/rake_task'
 
   namespace :ryspec do
