@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'simplecov'
   s.add_dependency 'capybara'#, '~> 3.0.3'
   s.add_dependency 'database_cleaner', '~> 1.7.0'
-  s.add_dependency 'factory_bot_rails', '~> 4.8.2'
+  s.add_dependency 'factory_bot_rails', '~> 5.0'
   s.add_dependency 'faker', '~> 1.8.7'
   s.add_dependency 'launchy', '~> 2.4.3'
   s.add_dependency 'poltergeist'#, '~> 1.18.0'
