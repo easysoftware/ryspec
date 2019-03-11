@@ -1,3 +1,4 @@
+$prevent_load_factories = true
 require "simplecov"
 SimpleCov.start "rails"
 require_relative 'init_rails'
