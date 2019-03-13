@@ -1,4 +1,4 @@
-$prevent_load_factories = true
+$ryspec = true
 require "simplecov"
 SimpleCov.start "rails"
 require_relative 'init_rails'
@@ -45,21 +45,16 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation, except: RYSPEC_PERSISTANT_TABLES)
-    # DatabaseCleaner.clean_with(:deletion, except: RYSPEC_PERSISTANT_TABLES)
-  end
-
-  config.before(:each) do
-    # DatabaseCleaner.strategy = :truncation, { except: RYSPEC_PERSISTANT_TABLES }
-    # DatabaseCleaner.strategy = :deletion, { except: RYSPEC_PERSISTANT_TABLES }
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each) do
+  config.prepend_before(:each) do
     DatabaseCleaner.start
   end
 
   config.append_after(:each) do
     DatabaseCleaner.clean
+    RequestStore.clear!
   end
 
   config.before(:each, :logged) do |example|
