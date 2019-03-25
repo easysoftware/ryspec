@@ -1,6 +1,4 @@
 $ryspec = true
-require "simplecov"
-SimpleCov.start "rails"
 require_relative 'init_rails'
 
 require 'rspec/rails'

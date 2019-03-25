@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rys'
   s.add_dependency 'rspec-rails', '~> 3.8'
-  s.add_dependency 'simplecov'
   s.add_dependency 'capybara'#, '~> 3.0.3'
   s.add_dependency 'database_cleaner', '~> 1.7.0'
   s.add_dependency 'factory_bot_rails', '~> 5.0'
