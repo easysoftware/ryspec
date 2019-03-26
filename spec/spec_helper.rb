@@ -1,5 +1,7 @@
 $ryspec = true
 require_relative 'init_rails'
+require "simplecov"
+SimpleCov.start "rails"
 
 require 'rspec/rails'
 require 'capybara/rspec'
