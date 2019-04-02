@@ -9,9 +9,13 @@ RSpec.describe "Lint builtin factories" do
   context "Issue" do
     it { FactoryBot.lint factories(%i[issue issue_custom_field journal tracker issue_status issue_priority]) }
   end
+  
+   context "News" do
+    it { FactoryBot.lint factories(%i[news]) }
+  end
 
   context "Project" do
-    it { FactoryBot.lint factories(%i[project role]) }
+    it { FactoryBot.lint factories(%i[project role member member_role]) }
   end
 
   context "TimeEntry" do
