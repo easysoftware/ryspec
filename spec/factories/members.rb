@@ -1,3 +1,4 @@
+=begin
 FactoryBot.define do
 
   factory :member_role do
@@ -22,3 +23,4 @@ FactoryBot.define do
   end
 
 end
+=end

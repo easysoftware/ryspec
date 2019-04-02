@@ -18,7 +18,9 @@ FactoryBot.define do
       project.project_time_entry_activities = FactoryBot.create_list(:time_entry_activity, 1) if project.project_time_entry_activities.empty?
 
       FactoryBot.create_list :issue, evaluator.number_of_issues, project: project
-      FactoryGirl.create_list :member, evaluator.number_of_members, project: project, roles: [FactoryGirl.create(:role)]
+      evaluator.number_of_members.times do
+        project.add_default_member(user)
+      end
     end
 
   end
