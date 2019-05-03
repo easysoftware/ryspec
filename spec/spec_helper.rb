@@ -1,7 +1,9 @@
 $ryspec = true
+require 'simplecov'
+SimpleCov.start 'rails' do
+  add_filter %r{^/lib/.+?/version\.rb}
+end
 require_relative 'init_rails'
-require "simplecov"
-SimpleCov.start "rails"
 
 require 'rspec/rails'
 require 'capybara/rspec'
