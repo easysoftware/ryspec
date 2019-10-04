@@ -1,7 +1,7 @@
 RSpec.describe "Lint builtin factories" do
 
   def factories(names)
-    names.collect { |name| FactoryBot.factory_by_name(name) }
+    names.collect { |name| FactoryBot::Internal.factory_by_name(name) }
   end
 
   it { FactoryBot.lint factories(%i[custom_field easy_custom_field_group user]) }
