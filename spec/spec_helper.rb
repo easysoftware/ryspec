@@ -7,11 +7,11 @@ require_relative 'init_rails'
 
 require 'rspec/rails'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
 
 RYSPEC_PERSISTANT_TABLES = %w(settings easy_settings trackers enumerations issue_statuses rys_features ar_internal_metadata)
 RESOLUTION = ENV['RESOLUTION'].to_s.split(',').presence || [1920, 1080]
-JS_DRIVER = ENV['JS_DRIVER'].present? ? ENV['JS_DRIVER'].downcase.to_sym : :poltergeist
+JS_DRIVER = ENV['JS_DRIVER'].present? ? ENV['JS_DRIVER'].downcase.to_sym : :chrome_headless
+CHROME_OPTIONS = ENV['CHROME_OPTIONS'].to_s.split(' ')
 
 require_relative 'init_factory_bot'
 require_relative 'init_capybara'

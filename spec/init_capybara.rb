@@ -24,36 +24,20 @@ class WarningSuppressor
   end
 end
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app,
-    inspector: true,
-    js_errors: true,
-    window_size: RESOLUTION,
-    timeout: 5.minutes.to_i,
-    phantomjs_options: ['--ignore-ssl-errors=yes'],
-    phantomjs_logger: WarningSuppressor
-  )
-end
-
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+  chrome_options = Selenium::WebDriver::Chrome::Options.new(args: CHROME_OPTIONS)
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
 end
 
 Capybara.register_driver :chrome_headless do |app|
-  args = []
+  args = CHROME_OPTIONS
   args << 'headless'
   args << 'disable-gpu'
   args << 'no-sandbox'
   args << "window-size=#{RESOLUTION.join(',')}"
 
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: args }
-  )
-
-  Capybara::Selenium::Driver.new(app,
-    browser: :chrome,
-    desired_capabilities: capabilities
-  )
+  chrome_options = Selenium::WebDriver::Chrome::Options.new(args: args)
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
 end
 
 Capybara.javascript_driver = JS_DRIVER
