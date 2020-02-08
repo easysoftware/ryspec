@@ -7,6 +7,8 @@ require_relative 'init_rails'
 
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
 
 RYSPEC_PERSISTANT_TABLES = %w(settings easy_settings trackers enumerations issue_statuses rys_features ar_internal_metadata)
 RESOLUTION = ENV['RESOLUTION'].to_s.split(',').presence || [1920, 1080]
