@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'faker', '~> 1.8.7'
   s.add_dependency 'launchy', '~> 2.4.3'
   s.add_dependency 'poltergeist'#, '~> 1.18.0'
-  s.add_dependency 'webmock', '~> 3.6.0'
+  s.add_dependency 'webmock', '~> 3.8.1'
 end
