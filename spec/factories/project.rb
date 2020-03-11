@@ -19,6 +19,7 @@ FactoryBot.define do
       FactoryBot.create_list :issue, evaluator.number_of_issues, project: project
     end
 
+    factory :project_custom_field, parent: :custom_field, class: 'ProjectCustomField'
   end
 
 end
