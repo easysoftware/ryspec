@@ -10,7 +10,7 @@ FactoryBot::Internal.reset_configuration
 FactoryBot::Internal.register_default_strategies
 FactoryBot::Internal.register_default_callbacks
 
-Rys::PluginsManagement.all do |plugin|
+Rys::PluginsManagement.all(systemic: true) do |plugin|
   FactoryBot.definition_file_paths << plugin.root.join('spec/factories').to_s
 end
 
