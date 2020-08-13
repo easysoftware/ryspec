@@ -17,7 +17,7 @@ FactoryBot.define do
   end
 
   factory :enumeration do
-    sequence(:name) { |n| "Enum #{n}" }
+    sequence(:name) {|n| "#{self.class.name} #{n}" }
     active { true }
     sequence(:position)
 

@@ -5,11 +5,12 @@ FactoryBot.define do
     sequence(:name) { |n| "Custom Field ##{n}" }
     field_format { 'string' }
     min_length { 1 }
-    max_length { 100 }
+    max_length { 300 }
     is_required { false }
     is_for_all { true }
     is_filter { true }
     searchable { true }
+    visible { true }
 
     trait :with_group do
       easy_group factory: :easy_custom_field_group
