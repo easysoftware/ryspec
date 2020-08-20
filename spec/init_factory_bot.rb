@@ -12,6 +12,10 @@ FactoryBot::Internal.register_default_callbacks
 
 Rys::PluginsManagement.all(systemic: true) do |plugin|
   FactoryBot.definition_file_paths << plugin.root.join('spec/factories').to_s
+
+  Array.wrap(plugin.paths['additional/spec/factories']).each do |path|
+    FactoryBot.definition_file_paths << File.join(Rails.root, path)
+  end
 end
 
 FactoryBot.find_definitions
