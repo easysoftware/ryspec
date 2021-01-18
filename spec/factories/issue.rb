@@ -16,6 +16,10 @@ FactoryBot.define do
 
     author { FactoryBot.build(:user) }
     assigned_to { author }
+
+    after(:create) do |issue, _|
+      issue.reload
+    end
   end
 
   factory :issue_custom_field, parent: :custom_field, class: 'IssueCustomField' do
