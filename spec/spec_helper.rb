@@ -19,7 +19,7 @@ require_relative 'init_factory_bot'
 require_relative 'init_capybara'
 require_relative 'init_support'
 
-require 'database_cleaner'
+require 'database_cleaner/active_record'
 
 ActiveJob::Base.queue_adapter = :test
 

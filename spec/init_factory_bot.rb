@@ -8,7 +8,6 @@ FactoryBot.definition_file_paths = []
 #        in easyproject core if Ryspec is present
 FactoryBot::Internal.reset_configuration
 FactoryBot::Internal.register_default_strategies
-FactoryBot::Internal.register_default_callbacks
 
 Rys::PluginsManagement.all(systemic: true) do |plugin|
   FactoryBot.definition_file_paths << plugin.root.join('spec/factories').to_s
