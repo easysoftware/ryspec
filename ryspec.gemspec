@@ -18,10 +18,12 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib,patches}/**/{*,.*}', 'Rakefile', 'README.md', 'gems.rb']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'rys'
-  s.add_dependency 'rspec-rails', '~> 5.0'
   s.add_dependency 'capybara'
   s.add_dependency 'database_cleaner-active_record', '~> 2.0.0'
   s.add_dependency 'factory_bot_rails', '~> 6.1'
+  s.add_dependency 'rspec-rails', '~> 5.0'
+  s.add_dependency 'rubocop', '~> 1.13.0'
+  s.add_dependency 'rubocop-rails', '~> 2.9.0'
+  s.add_dependency 'rys'
   s.add_dependency 'webmock', '~> 3.12.2'
 end
