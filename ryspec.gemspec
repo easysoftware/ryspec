@@ -24,4 +24,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'webmock', '~> 3.12.2'
 
   s.add_development_dependency 'easy_style'
+  s.add_dependency 'shoulda-matchers', '~> 5.0'
 end
