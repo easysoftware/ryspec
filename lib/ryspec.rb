@@ -13,10 +13,12 @@ module Ryspec
     factory_name ||= file_name || plugin_name
     return if FactoryBot.factories.registered? factory_name
 
-    factory_file = File.join(Redmine::Plugin.find(name).directory, "/test/factories/#{file_name || plugin_name}")
+    factory_file_name = file_name || plugin_name
+    factory_file_name << ".rb" unless factory_file_name.end_with?(".rb")
+    factory_file = File.join(Redmine::Plugin.find(plugin_name).directory, "/test/factories/#{factory_file_name}")
     raise ArgumentError, "File `#{factory_file}` doesnt exists!" unless File.exist?(factory_file)
 
-    require factory_file
+    load factory_file
   end
 
 end
