@@ -18,6 +18,7 @@ CHROME_OPTIONS = ENV['CHROME_OPTIONS'].to_s.split(' ')
 require_relative 'init_factory_bot'
 require_relative 'init_capybara'
 require_relative 'init_support'
+require_relative 'init_shoulda_matchers'
 
 require 'database_cleaner/active_record'
 
