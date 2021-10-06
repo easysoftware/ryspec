@@ -26,7 +26,7 @@ end
 
 Capybara.register_driver :chrome do |app|
   chrome_options = Selenium::WebDriver::Chrome::Options.new(args: CHROME_OPTIONS)
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
+  Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: chrome_options)
 end
 
 Capybara.register_driver :chrome_headless do |app|
@@ -37,7 +37,7 @@ Capybara.register_driver :chrome_headless do |app|
   args << "window-size=#{RESOLUTION.join(',')}"
 
   chrome_options = Selenium::WebDriver::Chrome::Options.new(args: args)
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
+  Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: chrome_options)
 end
 
 Capybara.javascript_driver = JS_DRIVER
