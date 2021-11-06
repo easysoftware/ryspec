@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - pass chrome_options as capabilities
+- Add retry to capybara specs
 
 ### Added
 - shoulda-matchers support
