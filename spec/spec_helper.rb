@@ -77,8 +77,4 @@ RSpec.configure do |config|
     ActiveJob::Base.queue_adapter = :test
   end
 
-  config.around :each, js: true do |ex|
-    ex.run_with_retry retry: 3
-  end
-
 end
