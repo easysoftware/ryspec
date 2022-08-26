@@ -6,9 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.5.5] - 2022-08-26
+### Fixed
+* rspec_junit_formatter is back | [@pavel](https://git.easy.cz/pavel)
+
+### Added
+* update webmock | [@pavel](https://git.easy.cz/pavel)
+
 ## [0.5.4] - 2022-08-26
 ### Fixed
 * clean all. | [#555618](https://es.easyproject.com/issues/555618) | [@pavel](https://git.easy.cz/pavel)
+
+## [0.5.3] - 2022-02-18
+### Added
+* rspec_junit_formatter. | [@lukas](https://git.easy.cz/lukas)
 
 ## [0.5.2] - 2021-12-04
 ### Removed
