@@ -18,8 +18,9 @@ CHROME_OPTIONS = ENV['CHROME_OPTIONS'].to_s.split(' ')
 require_relative 'init_factory_bot'
 require_relative 'init_capybara'
 require_relative 'init_support'
+require_relative 'init_shoulda_matchers'
 
-require 'database_cleaner'
+require 'database_cleaner/active_record'
 
 ActiveJob::Base.queue_adapter = :test
 
@@ -52,13 +53,14 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.prepend_before(:each) do
+  config.around(:each) do |example|
     DatabaseCleaner.start
-  end
-
-  config.append_after(:each) do
-    DatabaseCleaner.clean
-    RequestStore.clear!
+    begin
+      example.run
+    ensure
+      DatabaseCleaner.clean
+      RequestStore.clear!
+    end
   end
 
   config.before(:each, :logged) do |example|
@@ -70,6 +72,10 @@ RSpec.configure do |config|
                 else
                   User.anonymous
                 end
+  end
+
+  config.after(:each) do
+    ActiveJob::Base.queue_adapter = :test
   end
 
 end
