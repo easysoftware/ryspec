@@ -53,13 +53,14 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.prepend_before(:each) do
+  config.around(:each) do |example|
     DatabaseCleaner.start
-  end
-
-  config.append_after(:each) do
-    DatabaseCleaner.clean
-    RequestStore.clear!
+    begin
+      example.run
+    ensure
+      DatabaseCleaner.clean
+      RequestStore.clear!
+    end
   end
 
   config.before(:each, :logged) do |example|
