@@ -19,6 +19,8 @@ if Rails.env.test?
 
         patterns = []
         Rys::PluginsManagement.all do |plugin|
+          next if plugin.ryspec_disabled?
+
           patterns << plugin.root.join('spec/**/*_spec.rb').to_s
         end
 

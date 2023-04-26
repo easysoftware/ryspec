@@ -10,6 +10,8 @@ FactoryBot::Internal.reset_configuration
 FactoryBot::Internal.register_default_strategies
 
 Rys::PluginsManagement.all(systemic: true) do |plugin|
+  next if plugin.ryspec_disabled?
+
   FactoryBot.definition_file_paths << plugin.root.join('spec/factories').to_s
 end
 
