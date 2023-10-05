@@ -15,7 +15,11 @@ module Ryspec
 
     factory_file_name = (file_name || plugin_name).to_s
     factory_file_name << ".rb" unless factory_file_name.end_with?(".rb")
-    factory_file = File.join(Redmine::Plugin.find(plugin_name).directory, "/test/factories/#{factory_file_name}")
+    factory_file = if (rys = Rys::PluginsManagement.find(plugin_name))
+                     rys.root.join("spec/factories/#{factory_file_name}")
+                   else
+                     File.join(Redmine::Plugin.find(plugin_name).directory, "/test/factories/#{factory_file_name}")
+                   end
     raise ArgumentError, "File `#{factory_file}` doesnt exists!" unless File.exist?(factory_file)
 
     load factory_file
