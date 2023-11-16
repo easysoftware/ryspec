@@ -53,6 +53,17 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
+  config.around(:each) do |ex|
+    return ex.run unless defined?(EasyExtensions)
+
+    meta = ex.metadata
+    if (opts = EasyExtensions::Tests::AllowedFailures.test_names[meta[:full_description]])
+      pending(opts[:message].to_s)
+      raise unless opts[:raise] == false
+    end
+    ex.run
+  end
+
   config.around(:each) do |example|
     DatabaseCleaner.start
     begin
