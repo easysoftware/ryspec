@@ -18,10 +18,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'capybara'
   s.add_dependency 'database_cleaner-active_record', '~> 2.0.0'
-  s.add_dependency 'factory_bot_rails', '~> 6.1'
-  s.add_dependency 'rspec-rails', '~> 5.0'
+  s.add_dependency 'factory_bot_rails', '~> 6.2.0'
+  s.add_dependency 'rspec-rails', '~> 6.0.3'
   s.add_dependency 'rys'
-  s.add_dependency 'webmock', '~> 3.18.1'
+  s.add_dependency 'webmock', '~> 3.19.1'
   s.add_dependency 'rspec_junit_formatter', '~> 0.5.1'
 
   s.add_development_dependency 'easy_style'
