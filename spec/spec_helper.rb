@@ -21,6 +21,7 @@ require_relative 'init_support'
 require_relative 'init_shoulda_matchers'
 
 require 'database_cleaner/active_record'
+require EasyExtensions::Engine.root.join("spec/support/graphql_helpers")
 
 ActiveJob::Base.queue_adapter = :test
 
