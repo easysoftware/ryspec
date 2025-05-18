@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.1.1] - 2025-05-18
+### Fixed
+* fixed empty time entry author | [@radek.cerveny](https://git.easy.cz/radek.cerveny)
+
 ## [2.1.0] - 2024-12-07
 ### Changed
 * remove version locks of dependencies (will be managed by main app) | [@lukas](https://git.easy.cz/lukas)
