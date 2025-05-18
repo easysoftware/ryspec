@@ -23,7 +23,7 @@ RSpec.describe "Lint builtin factories" do
       FactoryBot.modify do
         factory :time_entry do
           after(:build) do |time_entry|
-            time_entry.author ||= time_entry.user if time_entry.author.nil?
+            time_entry.author ||= create(:user) if time_entry.author.nil?
           end
         end
       end
