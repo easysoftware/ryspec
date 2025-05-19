@@ -19,16 +19,6 @@ RSpec.describe "Lint builtin factories" do
   end
 
   context "TimeEntry" do
-    before(:each) do
-      FactoryBot.modify do
-        factory :time_entry do
-          after(:build) do |time_entry|
-            time_entry.author ||= create(:user) if time_entry.author.nil?
-          end
-        end
-      end
-    end
-
     it { FactoryBot.lint factories(%i[time_entry time_entry_activity]) }
   end
 end

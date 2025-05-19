@@ -7,6 +7,7 @@ FactoryBot.define do
     issue
     project { issue.project }
     user
+    author { user }
     activity { project.activities.first || FactoryBot.create(:time_entry_activity, :default) }
   end
 
